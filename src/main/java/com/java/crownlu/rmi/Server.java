@@ -1,9 +1,9 @@
 package com.java.crownlu.rmi;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import java.rmi.Naming;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Map;
 
@@ -25,11 +25,14 @@ public class Server {
      * UnicastRemoteObject的构造方法会抛出RemoteException，因此需要在实现他的子类当中重新声明构造方法，并继续抛出该异常
      */
     static class ServiceImpl extends UnicastRemoteObject implements IService {
-        public ServiceImpl() throws RemoteException {
+        String name;
+
+        public ServiceImpl(String name) throws RemoteException {
+            this.name = name;
         }
 
         @Override
-        public String service(String req, Map<String, String> context) {
+        public String service(String req, Map<String, String> context) throws RemoteException {
             return context.get(req);
         }
     }
@@ -40,8 +43,10 @@ public class Server {
      * @throws Exception
      */
     public static void main(String [] args) throws Exception {
-        IService service = new ServiceImpl();
-        Context context = new InitialContext();
-        context.rebind("rmi://127.0.0.1:8811/service", service);
+        IService service = new ServiceImpl("service02");
+//        Context context = new InitialContext();
+//        context.bind("rmi://localhost:8811/service02", service);
+        LocateRegistry.createRegistry(8888);
+        Naming.bind("rmi://localhost:8888/service02", service);
     }
 }

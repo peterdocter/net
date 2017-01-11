@@ -1,7 +1,6 @@
 package com.java.crownlu.rmi;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import java.rmi.Naming;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,8 +10,7 @@ import java.util.Map;
 public class Client {
 
     public static void main(String [] args) throws Exception {
-        Context context = new InitialContext();
-        Server.IService service = (Server.IService) context.lookup("rmi://127.0.0.1:8811/service");
+        Server.IService service = (Server.IService) Naming.lookup("rmi://localhost:8888/service02");
 
         Map<String, String> c = new HashMap<>();
         c.put("hello", "ss");
