@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "title": "发现免费WiFi",
+      "subtitle1": "点击开始一键连接 太平洋影城提供",
+      "img": "http://p1.meituan.net/feop/cec5b1ef1c912033beadf6c045525d1a4961.png",
+      "_type": "okwifi",
+      "_id": "110257563",
+      "_w": 0,
+      "_iUrl": "imeituan://www.meituan.com/wificonnector?source=smartfloat&isShowPoi=false&showWelcome=false&forceShowShare=false&isConnect=true&isShare=true&isDelete=true&macList=a4:fb:8d:02:fd:8a",
+      "showTime": 10000,
+      "_statTag": {
+        "offset": "0",
+        "requestid": "6b079579-5823-4420-bdd2-1ff343f184b7",
+        "id": "110257563",
+        "type": "okwifi"
+      }
+    }
+  ],
+  "serverInfo": {
+    "traceId": "6b079579-5823-4420-bdd2-1ff343f184b7",
+    "ctr": 1,
+    "cost_sOkwifi": 5,
+    "ab_serviec_mtapphomepage_smflt": "b",
+    "cost_mac2poiid": 4,
+    "cost": 35,
+    "cost_abtest": 3
+  },
+  "requestId": "6b079579-5823-4420-bdd2-1ff343f184b7"
+}

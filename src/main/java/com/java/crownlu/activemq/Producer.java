@@ -37,8 +37,9 @@ public class Producer {
     }
 
     public static void main(String [] args) throws Exception {
-        Producer p = new Producer().init();
-        p.send("mytest message");
-        p.send("this is my second message");
+//        Producer p = new Producer().init();
+//        p.send("mytest message");
+//        p.send("this is my second message");
+        System.out.print(Producer.class.getProtectionDomain().getCodeSource());
     }
 }
